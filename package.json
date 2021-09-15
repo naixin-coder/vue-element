@@ -2,16 +2,23 @@
   "name": "vue-element",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.6"
+    "@element-plus/icons": "^0.0.11",
+    "element-plus": "^1.1.0-beta.10",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "vue": "^3.2.6",
+    "vue-router": "4",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.1",
     "@vue/compiler-sfc": "^3.2.6",
-    "vite": "^2.5.4"
+    "vite": "^2.5.4",
+    "vite-plugin-element-plus": "^0.0.12"
   }
 }
