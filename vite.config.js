@@ -2,10 +2,11 @@
  * @Author: 刘林
  * @Date: 2021-09-14 16:58:39
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-14 20:53:00
+ * @LastEditTime: 2021-09-17 09:36:35
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import server from './config/server';
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
@@ -22,6 +23,7 @@ import { resolve } from 'path'
 // })
 export default defineConfig({
   plugins: [vue()],
+  server,
   resolve: {
     alias: {
       '@': resolve('src')

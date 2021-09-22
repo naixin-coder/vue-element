@@ -2,7 +2,7 @@
  * @Author: 刘林
  * @Date: 2021-09-14 20:01:47
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-15 21:10:57
+ * @LastEditTime: 2021-09-17 15:13:21
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Layout from '@/layouts/Layout.vue';
@@ -17,6 +17,7 @@ const routes = [
     children: [
       {
         path: '/home',
+        name: '首页',
         component: Dashborad,
       }
     ],
@@ -25,7 +26,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior(to, form, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router;

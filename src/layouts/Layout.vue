@@ -2,19 +2,37 @@
  * @Author: 刘林
  * @Date: 2021-09-14 20:46:06
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-15 21:03:11
+ * @LastEditTime: 2021-09-17 15:34:46
 -->
 <template>
   <el-container class="layout-warpper">
     <SideMenu />
     <el-container>
       <el-header height="3rem" class="layout-header">
+        <Breadcrumn />
         <div class="layout-header-icon">
           <el-space>
-            <i class="el-icon-message-solid" style="color:#252D4E;font-size:18px;"></i>
+            <el-space :size="20">
+              <i class="el-icon-bell" style="color:#252D4E;font-size:18px;"></i>
+              <el-tooltip content="全屏">
+                <i class="el-icon-full-screen"></i>
+              </el-tooltip>
+            </el-space>
             <el-divider direction="vertical"></el-divider>
-            <el-avatar :size="28"></el-avatar>
-            <span style="font-size:0.8rem;color:#7C8293;">admin</span>
+            <el-dropdown>
+              <!-- <span class="el-dropdown-link">
+                下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+              </span> -->
+              <el-space>
+                <el-avatar :size="28"></el-avatar>
+                <span style="font-size:0.8rem;color:#7C8293;">admin</span>
+              </el-space>
+              <template #dropdown>
+                <el-dropdown-menu>
+                    <el-dropdown-item icon="el-icon-switch-button">退出登录</el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
           </el-space>
         </div>
       </el-header>
@@ -27,6 +45,8 @@
 
 <script setup>
 import SideMenu from './compoents/side-menu.vue';
+import Breadcrumn from './compoents/breadcrumn.vue';
+
 </script>
 <style lang="less">
   
@@ -34,6 +54,9 @@ import SideMenu from './compoents/side-menu.vue';
     min-height: 100vh;
 
     .layout-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .layout-header-icon {
         height: 100%;
         display: flex;

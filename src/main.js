@@ -2,7 +2,7 @@
  * @Author: 刘林
  * @Date: 2021-09-14 16:58:39
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-15 10:42:23
+ * @LastEditTime: 2021-09-17 09:04:53
  */
 import { createApp } from 'vue';
 import 'element-plus/dist/index.css';
@@ -12,6 +12,7 @@ import router from './router'
 
 const app = createApp(App);
 
+app.config.globalProperties.foo = 'foo';
 app.use(ElementPlus, { size: 'small' });
 app.use(router);
 app.mount('#app');

@@ -2,10 +2,10 @@
  * @Author: 刘林
  * @Date: 2021-09-15 16:10:22
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-15 19:57:21
+ * @LastEditTime: 2021-09-17 15:03:29
 -->
 <template>
-  <el-aside class="layout-aside" width="12.5rem" :class="{collapse: !isCollapse,uncollapse:isCollapse}">
+  <el-aside class="layout-aside" width="12.5rem" :class="collapseClass">
     <div class="layout-aside-title">
       <img src="@/assets/image/logo.svg" alt="">
       <transition name="title-fade">
@@ -24,9 +24,11 @@
 import {ref} from 'vue';
 import Menu from './menu.vue';
 
-const isCollapse = ref(false);
+const isCollapse = ref(true);
+const collapseClass = ref('');
 const collapse = ()=>{
   isCollapse.value= !isCollapse.value;
+  collapseClass.value = !isCollapse.value ? 'collapse' : 'uncollapse'
 }
 
 </script>
