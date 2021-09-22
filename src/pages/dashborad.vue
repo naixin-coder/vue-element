@@ -2,7 +2,7 @@
  * @Author: 刘林
  * @Date: 2021-09-15 21:09:29
  * @LastEditors: 刘林
- * @LastEditTime: 2021-09-17 17:08:30
+ * @LastEditTime: 2021-09-22 17:03:20
 -->
 <template>
   <el-row :gutter="8">
@@ -44,7 +44,26 @@
         </div>
         <el-tabs v-model="tab">
           <el-tab-pane label="用户管理" name="first">
-            <div style="height:107px;"></div>
+            <div style="height:107px;">
+              <List content="尊敬的吴新疆，您参与xxxx项目" more="2020年6月8日">
+                <template #title>
+                 <span style="color:#FA622A;">【招募报名】</span>
+                 <span>钟宝达灯控系统</span>
+                </template>
+              </List>
+               <List content="尊敬的吴新疆，您参与xxxx项目" more="2020年6月8日">
+                <template #title>
+                 <span style="color:#FA622A;">【招募报名】</span>
+                 <span>钟宝达灯控系统</span>
+                </template>
+              </List>
+               <List content="尊敬的吴新疆，您参与xxxx项目" more="2020年6月8日">
+                <template #title>
+                 <span style="color:#FA622A;">【招募报名】</span>
+                 <span>钟宝达灯控系统</span>
+                </template>
+              </List>
+            </div>
           </el-tab-pane>
           <el-tab-pane label="配置管理" name="second">
             <div style="height:107px;"></div>
@@ -66,6 +85,7 @@
 
 <script setup>
 import {ref} from 'vue';
+import List from '@/components/List.vue';
 const tab = ref('first');
 </script>
 
